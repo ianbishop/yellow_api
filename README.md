@@ -14,4 +14,4 @@ Ruby wrapper for the YellowPages' Yellow API
 API style was largely stolen/inspired by [hacker_news_search](https://github.com/ryanatwork/hacker_news_search) and [twitter](https://github.com/jnunemaker/twitter).
 
 ## Copyright
-See [LICENSE](https://github.com/ianbishop/yellow-api/blob/master/LICENSE.md) for more details.
+See [LICENSE](https://github.com/ianbishop/yellow_api/blob/master/LICENSE.md) for more details.
