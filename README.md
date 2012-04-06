@@ -32,6 +32,7 @@ Ruby wrapper for the YellowPages' [YellowAPI](http://www.yellowapi.com).
 
 ## Documentation
 [See here](http://rdoc.info/github/ianbishop/yellow_api/master/YellowApi)
+
 [Official API docs](http://www.yellowapi.com/docs/places)
 
 ## Inspiration
