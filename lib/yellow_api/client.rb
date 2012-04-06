@@ -4,6 +4,7 @@ require 'yellow_api/client/request'
 require 'yellow_api/client/find_business'
 require 'yellow_api/client/get_business_details'
 require 'yellow_api/client/find_dealer'
+require 'yellow_api/client/get_type_ahead'
 
 module YellowApi
   class Client
@@ -13,6 +14,7 @@ module YellowApi
     include YellowApi::Client::FindBusiness
     include YellowApi::Client::GetBusinessDetails
     include YellowApi::Client::FindDealer
+    include YellowApi::Client::GetTypeAhead
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
 

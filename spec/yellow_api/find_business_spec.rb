@@ -15,7 +15,7 @@ describe YellowApi::Client::FindBusiness do
     end
 
     it "should return the correct number of businesses" do
-      wait 5 do
+      wait 2 do
         business = @client.find_business("barber", "Canada", { :pgLen => 1 })
         a_get("FindBusiness/?what=barber&where=Canada&fmt=JSON&pgLen=1&apikey=a1s2d3f4g5h6j7k8l9k6j5j4&UID=#{@client.uid}").
           should have_been_made

@@ -15,7 +15,7 @@ describe YellowApi::Client::FindDealer do
     end
 
     it "should return the correct parent business" do
-      wait 5 do
+      wait 2 do
         business = @client.find_dealer(6418182, {:pgLen => 1})
         a_get("FindDealer/?pid=6418182&apikey=a1s2d3f4g5h6j7k8l9k6j5j4&fmt=JSON&pgLen=1&UID=#{@client.uid}").
           should have_been_made

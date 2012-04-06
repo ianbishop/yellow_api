@@ -10,14 +10,19 @@ module YellowApi
       # @reqires_authentication Yes
       #
       # @param text [String] Characters typed by user
-      # @param lang [String] Suggestion languages (en - English, fr - French)
-      # @param field [String] Which field to suggest, WHAT or WHERE (caps sensitive!)
+      # @param field [Symbol] Which field to suggest, :what or :where
+      # @param lang [String] Suggestion languages (en - English [default], fr - French)
       # @return {Hash}
       # @example
-      #   YellowApi.get_type_ahead("au", "en", "WHAT")
-      #   YellowApi.get_type_ahead("monc", "en", "WHERE")
-      def get_type_ahead(text, lang, field)
-        get('/GetTypeAhead/', { :text => text, :lang => lang })
+      #   YellowApi.get_type_ahead("au", :what)
+      #   YellowApi.get_type_ahead("monc", :where, "fr")
+      def get_type_ahead(text, field, lang="en")
+        options = {
+          :text => text,
+          :lang => lang,
+          :field => field.to_s.upcase
+        }
+        get('/GetTypeAhead/', options)
       end
 
     end
