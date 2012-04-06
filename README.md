@@ -6,7 +6,7 @@ Ruby wrapper for the YellowPages' Yellow API
     gem install yellow-api
 
 ## Documentation
-[See here](http://rdoc.info/gems/yellow-api)
+[See here](http://rdoc.info/github/ianbishop/yellow_api/master/YellowApi)
 
 ## Examples
 
