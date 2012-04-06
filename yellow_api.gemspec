@@ -26,4 +26,5 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'multi_json', '~> 1.0.2'
   gem.add_runtime_dependency 'rash', '~> 0.3.0'
   gem.add_runtime_dependency 'uuid', '~> 2.3.5'
+  gem.add_runtime_dependency 'activesupport', '~> 3.2.3'
 end

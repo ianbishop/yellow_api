@@ -21,7 +21,7 @@ Ruby wrapper for the YellowPages' [YellowAPI](http://www.yellowapi.com).
 
     # Get business details
     my_barber = @client.find_business("barber", "Ottawa").listings.first
-    @client.get_business_details("Ontario", my_barber.name, my_barber.listingId)
+    @client.get_business_details(my_barber.address.prov, my_barber.name, my_barber.id)
 
     # Find dealers
     @client.find_dealer(6418182, { :pgLen => 10 })
