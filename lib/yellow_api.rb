@@ -1,17 +1,26 @@
 require 'yellow_api/client'
+require 'yellow_api/config'
 
 module YellowApi
+  extend Config
 
-  def self.new
-    YellowApi::Client.new
-  end
+  class << self
+    
+    # Alias for YellowApi::Client.new
+    #
+    # @return [YellowApi::Client]
+    def new(options={})
+      YellowApi::Client.new(options)
+    end
 
-  def method_missing(method, *args, &block)
-    return super unless new.respond_to?(method)
-    new.send(method, *args, &block)
-  end
+    # Delegate to YellowApi::Client
+    def method_missing(method, *args, &block)
+      return super unless new.respond_to?(method)
+      new.send(method, *args, &block)
+    end
 
-  def respond_to?(method, include_private=false)
-    new.respond_to?(method, include_private) || super(method, include_private)
+    def respond_to?(method, include_private=false)
+      new.respond_to?(method, include_private) || super(method, include_private)
+    end
   end
 end

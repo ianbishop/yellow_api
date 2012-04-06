@@ -25,4 +25,5 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'hashie', '~> 1.2.0'
   gem.add_runtime_dependency 'multi_json', '~> 1.0.2'
   gem.add_runtime_dependency 'rash', '~> 0.3.0'
+  gem.add_runtime_dependency 'uuid', '~> 2.3.5'
 end
