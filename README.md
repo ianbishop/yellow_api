@@ -3,32 +3,44 @@
 Ruby wrapper for the YellowPages' [YellowAPI](http://www.yellowapi.com).
 
 ## Installation
-    gem install yellow_api
+``` bash
+$ gem install yellow_api
+```
+## Usage
+  
+### Creating a client
+``` ruby
+# Production
+@client = YellowApi.new(:apikey => "yourapikeygoeshere")
 
-## Examples
+# Sandbox
+@client = YellowApi.new(:apikey => "sandboxapikey", :sandbox_enabled => true)
+```
+### Find businesses by listing
+``` ruby
+@client.find_business("barber", "Ottawa")
 
-    require 'yellow_api'
-    
-    # Creating a client
-    @client = YellowApi.new(:apikey => "yourapikeygoeshere")
-    
-    @client = YellowApi.new(:apikey => "sandboxapikey", :sandbox_enabled => true)
+@client.find_business("barber", "Ottawa", { :pgLen => 10 }) # Limit to 10 listings
+```
 
-    # Find businesses by listing
-    @client.find_business("barber", "Ottawa")
+### Get business details
 
-    @client.find_business("barber", "Ottawa", { :pgLen => 10 }) # Limit to 10
+``` ruby
+my_barber = @client.find_business("barber", "Ottawa").listings.first
+@client.get_business_details(my_barber.address.prov, my_barber.name, my_barber.id)
+```
 
-    # Get business details
-    my_barber = @client.find_business("barber", "Ottawa").listings.first
-    @client.get_business_details(my_barber.address.prov, my_barber.name, my_barber.id)
+### Find dealers
+``` ruby
+@client.find_dealer(6418182, { :pgLen => 10 })
+```
 
-    # Find dealers
-    @client.find_dealer(6418182, { :pgLen => 10 })
+### Get type ahead
 
-    # Get type ahead
-    @client.get_type_ahead("auto", :what)
-    @client.get_type_ahead("monct", :where)
+``` ruby
+@client.get_type_ahead("auto", :what)
+@client.get_type_ahead("monct", :where)
+```
 
 ## Documentation
 [See here](http://rdoc.info/github/ianbishop/yellow_api/master/YellowApi)
@@ -36,7 +48,7 @@ Ruby wrapper for the YellowPages' [YellowAPI](http://www.yellowapi.com).
 [Official API docs](http://www.yellowapi.com/docs/places)
 
 ## Inspiration
-API style was largely stolen/inspired by [hacker_news_search](https://github.com/ryanatwork/hacker_news_search) and [twitter](https://github.com/jnunemaker/twitter).
+API style was largely inspired by sferik's [twitter](https://github.com/sferik/twitter).
 
 ## Copyright
 See [LICENSE](https://github.com/ianbishop/yellow_api/blob/master/LICENSE.md) for more details.
