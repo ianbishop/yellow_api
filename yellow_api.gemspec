@@ -22,9 +22,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'yard'          , '~> 0.7'
   gem.add_runtime_dependency     'faraday'           , '~> 0.7.4'
   gem.add_runtime_dependency     'faraday_middleware', '~> 0.7.0'
-  gem.add_runtime_dependency     'hashie'            , '~> 1.2.0'
-  gem.add_runtime_dependency     'multi_json'        , '~> 1.0.2'
-  gem.add_runtime_dependency     'rash'              , '~> 0.3.0'
+  gem.add_runtime_dependency     'hashie'            , '~> 2.0.2'
+  gem.add_runtime_dependency     'multi_json'        , '~> 1.10.1'
+  gem.add_runtime_dependency     'rash'              , '~> 0.4.0'
   gem.add_runtime_dependency     'uuid'              , '~> 2.3.5'
-  gem.add_runtime_dependency     'activesupport'     , '~> 3.2.3'
+  gem.add_runtime_dependency     'activesupport'     , '>= 4.0.0'
 end
